@@ -9,20 +9,30 @@ const actions = [
     { id: 'HIGH_PRIORITY', title: 'Important Notification', description: 'See important notication on-top of applications, allowing direct interaction without pulling down the notification shade' },
 ];
 
-const onDoAction = (type: string) => {
-    notifeePermission(() => {
-        if (type === 'BASIC') {
-            onDisplayNotification();
-        } else if (type === 'TEXT_STYLED') {
-            onDisplayStyledNotifee()
-        } else if (type === 'HIGH_PRIORITY') {
-            onDisplayHighPriorityNotifee();
+
+const Notifee = ({ navigation, route }: any) => {
+    const { params } = route;
+
+    useEffect(() => {
+        if (params?.type) {
+            const type = params.type.toUpperCase();
+            onDoAction(type);
         }
-    })
+    }, [params])
 
-}
+    const onDoAction = (type: string) => {
+        notifeePermission(() => {
+            if (type === 'BASIC') {
+                onDisplayNotification();
+            } else if (type === 'TEXT_STYLED') {
+                onDisplayStyledNotifee()
+            } else if (type === 'HIGH_PRIORITY') {
+                onDisplayHighPriorityNotifee();
+            }
+        })
 
-const Notifee = () => {
+    }
+
     const renderItem = ({ item }: any) => (
         <Card containerStyle={styles.card}>
             <Card.Title style={{ textAlign: "left" }}>{item.title}</Card.Title>
@@ -39,6 +49,8 @@ const Notifee = () => {
     return (
         <View style={styles.container}>
             <FlatList
+                contentContainerStyle={{ height: '100%', justifyContent: "space-evenly" }}
+                scrollEnabled={false}
                 data={actions}
                 renderItem={renderItem}
                 keyExtractor={(item) => item.id}

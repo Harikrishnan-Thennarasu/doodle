@@ -1,8 +1,10 @@
 import { ThemeProvider, createTheme } from '@rneui/themed';
-import Notifee from './src/screens/Notifee';
 import notifee, { EventType } from '@notifee/react-native';
 import { useEffect } from 'react';
 import { notifeeHandler } from './src/functions/notifee-services';
+import { NavigationContainer } from '@react-navigation/native';
+import StackNavigator from './src/navigation/StackNavigator';
+import { Linking, Text } from 'react-native';
 
 const theme = createTheme({
   lightColors: {
@@ -14,15 +16,40 @@ const theme = createTheme({
   mode: 'light',
 });
 
+
+const config = {
+  screens: {
+    Notifee: 'notifee/:type',
+    Profile: 'profile/:name',
+    NotFound: '*',
+  },
+};
+
+const linking = {
+  prefixes: ['https://doodle.com'],
+  config
+};
+
 const App = () => {
   useEffect(() => {
+
+    Linking.addEventListener('url', (url) => {
+      console.log('EventListener : ', url)
+    });
+
+    Linking.getInitialURL().then((url) => {
+      console.log('getInitialURL : ', url)
+    });
+
     return notifee.onForegroundEvent(notifeeHandler
     );
   }, []);
 
   return (
     <ThemeProvider theme={theme}>
-      <Notifee />
+      <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}>
+        <StackNavigator />
+      </NavigationContainer>
     </ThemeProvider>
   );
 };

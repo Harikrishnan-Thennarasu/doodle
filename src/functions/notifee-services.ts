@@ -32,7 +32,7 @@ export const notifeePermission = async (callBack: any) => {
     }
 }
 
-export const notifeeHandler = ({ type, detail }: any) => {
+export const notifeeHandler = async ({ type, detail }: any) => {
     const { notification, pressAction } = detail;
     switch (type) {
         case EventType
