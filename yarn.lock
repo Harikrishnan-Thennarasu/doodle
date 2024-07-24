@@ -2164,6 +2164,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-clipboard/clipboard@npm:^1.14.1":
+  version: 1.14.1
+  resolution: "@react-native-clipboard/clipboard@npm:1.14.1"
+  peerDependencies:
+    react: 16.9.0 || 16.11.0 || 16.13.1 || 17.0.1 || 17.0.2 || 18.0.0 || 18.1.0 || 18.2.0
+    react-native: ^0.61.5 || ^0.62.3 || ^0.63.2 || ^0.64.2 || ^0.65.0 || ^0.66.0 || ^0.67.0 || ^0.68.0 || ^0.69.0 || ^0.70.0 || ^0.71.0 || ^0.72.0 || ^0.73.0
+    react-native-macos: ^0.61.0 || ^0.62.0 || ^0.63.0 || ^0.64.0 || ^0.65.0 || ^0.66.0 || ^0.67.0 || ^0.68.0 || ^0.69.0 || ^0.70.0 || ^0.71.0 || ^0.72.0 || ^0.73.0
+    react-native-windows: ^0.61.0 || ^0.62.0 || ^0.63.0 || ^0.64.0 || ^0.65.0 || ^0.66.0 || ^0.67.0 || ^0.68.0 || ^0.69.0 || ^0.70.0 || ^0.71.0 || ^0.72.0 || ^0.73.0
+  checksum: 005ce2bee4d6e30b2a6b11be0d0ee169ab108d24f2a9b518b0ba8e5b96616c6dfb089c28644c1b5e3c1b9aa786c92cbf781e525223f56ab8589da1df79cae31f
+  languageName: node
+  linkType: hard
+
 "@react-native-community/cli-clean@npm:13.6.9":
   version: 13.6.9
   resolution: "@react-native-community/cli-clean@npm:13.6.9"
@@ -2342,6 +2354,16 @@ __metadata:
   bin:
     rnc-cli: build/bin.js
   checksum: 5e997b50fd687b4f3fcdde6a1fd36317ffee5536649fb16e87f6e3bb1bd56a279daad57b7d904d0442425106f048a114e3987f9a0fc8dc3fadd0a784dcb83a40
+  languageName: node
+  linkType: hard
+
+"@react-native-community/hooks@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@react-native-community/hooks@npm:3.0.0"
+  peerDependencies:
+    react: ">=17.0.2"
+    react-native: ">=0.65"
+  checksum: 4fefcc22883ca7e21ad26e12830671e7287e29eed8fc51fdebebbccdd27b53f7743f64f55d640a74ea2dae4fed1f44b7be40410938564e736a2c3bbb9a770d3e
   languageName: node
   linkType: hard
 
@@ -4319,6 +4341,8 @@ __metadata:
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
     "@notifee/react-native": ^7.8.2
+    "@react-native-clipboard/clipboard": ^1.14.1
+    "@react-native-community/hooks": ^3.0.0
     "@react-native/babel-preset": 0.74.85
     "@react-native/eslint-config": 0.74.85
     "@react-native/metro-config": 0.74.85
@@ -4338,6 +4362,7 @@ __metadata:
     react-native-safe-area-context: ^4.10.8
     react-native-screens: ^3.32.0
     react-native-vector-icons: ^10.1.0
+    react-native-vision-camera: ^4.5.0
     react-test-renderer: 18.2.0
     typescript: 5.0.4
   languageName: unknown
@@ -8206,6 +8231,26 @@ __metadata:
     fa6-upgrade: bin/fa6-upgrade.sh
     generate-icon: bin/generate-icon.js
   checksum: c1e1d7c7ccc110e99caaed4d57324d5331dfa91817183350d2fd4df16d2302e7363da1f7a2b87011da3936b77aac3a7bf8ee11844dd8786b8b7dbc6553494866
+  languageName: node
+  linkType: hard
+
+"react-native-vision-camera@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "react-native-vision-camera@npm:4.5.0"
+  peerDependencies:
+    "@shopify/react-native-skia": "*"
+    react: "*"
+    react-native: "*"
+    react-native-reanimated: "*"
+    react-native-worklets-core: "*"
+  peerDependenciesMeta:
+    "@shopify/react-native-skia":
+      optional: true
+    react-native-reanimated:
+      optional: true
+    react-native-worklets-core:
+      optional: true
+  checksum: 5301b9cb303d3ee7b9f4d4c0368ace06d62826c6c4deb92c744a3dfb8a4de30f2fd5d40374bd529a3e5647245a02736d45fb0a2c6f9bbb3350bc9cc9951e57a6
   languageName: node
   linkType: hard
 
