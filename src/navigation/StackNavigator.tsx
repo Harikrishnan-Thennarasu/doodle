@@ -7,7 +7,7 @@ import Scanner from '../screens/Scanner';
 import ScanResult from '../screens/ScanResult';
 import { Icon, Text, ListItem } from '@rneui/base';
 import { Drawer } from 'react-native-drawer-layout';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator();
@@ -23,6 +23,13 @@ function StackNavigator() {
     const renderDrawerContent = () => {
         return (
             <View style={styles.drawerContent}>
+                <View style={styles.drawerHeader}>
+                    <Image
+                        source={require('../assets/doodle.png')} // Replace with your app icon URL
+                        style={styles.appIcon}
+                    />
+                    <Text style={styles.appName}>Doodle</Text>
+                </View>
                 <ListItem
                     onPress={() => { onNavigateByName('Profile') }}
                     bottomDivider
@@ -108,7 +115,23 @@ const styles = StyleSheet.create({
     },
     listIconStyle: {
         width: 25
-    }
+    },
+    drawerHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 20,
+        backgroundColor: '#f0f0f0',
+    },
+    appIcon: {
+        width: 50,
+        height: 50,
+        borderRadius: 10,
+        marginRight: 10,
+    },
+    appName: {
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
 });
 
 
