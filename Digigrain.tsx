@@ -7,6 +7,7 @@ import Login from './src/screens/Login';
 import VerifyOTP from './src/screens/VerifyOTP';
 import SignUp from './src/screens/SignUp';
 import Welcome from './src/screens/Welcome';
+import SideMenu from './src/screens/SideMenu';
 
 const theme = createTheme({
     lightColors: {
@@ -32,6 +33,7 @@ const App = () => {
                         <Stack.Screen name="Login" component={Login} />
                         <Stack.Screen name="VerifyOTP" component={VerifyOTP} />
                         <Stack.Screen name="SignUp" component={SignUp} />
+                        <Stack.Screen name="SideMenu" component={SideMenu} />
                     </Stack.Group>
                 </Stack.Navigator>
             </NavigationContainer>

@@ -6,7 +6,7 @@ import LinearGradient from "react-native-linear-gradient";
 
 
 
-const Welcome = ({ children }: any) => {
+const Welcome = ({ navigation }: any) => {
     return (
         <View style={styles.container}>
             <ScrollView>
@@ -27,7 +27,11 @@ const Welcome = ({ children }: any) => {
                             />
                         </LinearGradient>
                         <Text style={styles.welcomeText}>Welcome</Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigation.navigate('SideMenu');
+                            }}
+                        >
                             <Icon
                                 style={styles.statsIcon}
                                 name="stats-chart"
