@@ -2,6 +2,7 @@ import { Card, Icon } from "@rneui/base";
 import { useState } from "react";
 import { FlatList, Image, ScrollView, Text, TextInput, TouchableOpacity, View, StyleSheet } from "react-native";
 import EclipseBgLayer from "../components/EclipseBgLayer";
+import LinearGradient from "react-native-linear-gradient";
 
 
 
@@ -11,13 +12,20 @@ const Welcome = ({ children }: any) => {
             <ScrollView>
                 <View style={styles.contentContainer}>
                     <View style={styles.header}>
-                        <Icon
-                            color={"#fff"}
-                            name="user"
-                            type={"font-awesome"}
-                            style={styles.userIcon}
-                            size={25}
-                        />
+                        <LinearGradient
+                            colors={['#728cc4', '#83BD56']}
+                            style={{
+                                borderRadius: 20,
+                            }}
+                        >
+                            <Icon
+                                color={"#fff"}
+                                name="user"
+                                type={"font-awesome"}
+                                style={styles.userIcon}
+                                size={25}
+                            />
+                        </LinearGradient>
                         <Text style={styles.welcomeText}>Welcome</Text>
                         <TouchableOpacity>
                             <Icon
@@ -202,10 +210,8 @@ const styles = StyleSheet.create({
         flexGrow: 1
     },
     userIcon: {
-        backgroundColor: "#83BD56",
         height: 40,
         width: 40,
-        borderRadius: 20,
         justifyContent: "center",
         alignItems: "center"
     },
