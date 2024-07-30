@@ -6,6 +6,7 @@ import Onboarding from './src/screens/Onboarding';
 import Login from './src/screens/Login';
 import VerifyOTP from './src/screens/VerifyOTP';
 import SignUp from './src/screens/SignUp';
+import Welcome from './src/screens/Welcome';
 
 const theme = createTheme({
     lightColors: {
@@ -26,6 +27,7 @@ const App = () => {
             <NavigationContainer fallback={<Splash />}>
                 <Stack.Navigator>
                     <Stack.Group screenOptions={{ headerShown: false }}>
+                        <Stack.Screen name="Welcome" component={Welcome} />
                         <Stack.Screen name="Onboarding" component={Onboarding} />
                         <Stack.Screen name="Login" component={Login} />
                         <Stack.Screen name="VerifyOTP" component={VerifyOTP} />
