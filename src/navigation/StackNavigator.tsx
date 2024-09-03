@@ -9,6 +9,8 @@ import { Icon, Text, ListItem } from '@rneui/base';
 import { Drawer } from 'react-native-drawer-layout';
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import MyCart from '../screens/MyCart';
+import CartDetails from '../screens/CartDetails';
 
 const Stack = createNativeStackNavigator();
 
@@ -57,6 +59,15 @@ function StackNavigator() {
                         <ListItem.Title>QR/Bar Scanner</ListItem.Title>
                     </ListItem.Content>
                 </ListItem>
+                <ListItem
+                    bottomDivider
+                    onPress={() => { onNavigateByName('MyCart') }}
+                >
+                    <Icon style={styles.listIconStyle} name="shopping-cart" type="font-awesome" />
+                    <ListItem.Content>
+                        <ListItem.Title>My Cart</ListItem.Title>
+                    </ListItem.Content>
+                </ListItem>
             </View>
         );
     };
@@ -99,6 +110,8 @@ function StackNavigator() {
                 <Stack.Screen name="Scanner" component={Scanner} options={{ title: "QR/Bar Scanner" }} />
                 <Stack.Screen name="ScanResult" component={ScanResult} options={{ title: "Result" }} />
                 <Stack.Screen name="NotFound" component={NotFound} />
+                <Stack.Screen name="MyCart" component={MyCart} options={{ title: "My Cart" }}/>
+                <Stack.Screen name="CartDetails" component={CartDetails} options={{ title: "Details" }} />
             </Stack.Navigator>
         </Drawer>
     );

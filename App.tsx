@@ -1,10 +1,12 @@
 import { ThemeProvider, createTheme } from '@rneui/themed';
 import notifee, { EventType } from '@notifee/react-native';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { Provider } from 'react-redux';
 import { notifeeHandler } from './src/functions/notifee-services';
 import { NavigationContainer } from '@react-navigation/native';
 import StackNavigator from './src/navigation/StackNavigator';
 import { Linking, Text } from 'react-native';
+import store from './src/redux/store';
 
 const theme = createTheme({
   lightColors: {
@@ -47,9 +49,11 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}>
-        <StackNavigator />
-      </NavigationContainer>
+      <Provider store={store}>
+        <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}>
+          <StackNavigator />
+        </NavigationContainer>
+      </Provider>
     </ThemeProvider>
   );
 };
