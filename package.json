@@ -18,7 +18,7 @@
     "@rneui/base": "^4.0.0-rc.8",
     "@rneui/themed": "^4.0.0-rc.8",
     "react": "18.2.0",
-    "react-native": "0.74.3",
+    "react-native": "0.79.0",
     "react-native-drawer-layout": "^3.3.2",
     "react-native-gesture-handler": "^2.17.1",
     "react-native-reanimated": "^3.14.0",
